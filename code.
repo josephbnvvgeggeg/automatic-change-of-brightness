@@ -1,0 +1,26 @@
+function adjustBrightness(isSunny) {
+  // Get the current time
+  var currentTime = new Date().getHours();
+  
+  // Set the brightness level based on the time of day and whether it is sunny
+  if (isSunny) {
+    if (currentTime >= 6 && currentTime < 8) {
+      document.body.style.filter = "brightness(150%)";
+    } else if (currentTime >= 8 && currentTime < 18) {
+      document.body.style.filter = "brightness(100%)";
+    } else if (currentTime >= 18 && currentTime < 20) {
+      document.body.style.filter = "brightness(80%)";
+    } else {
+      document.body.style.filter = "brightness(50%)";
+    }
+  } else {
+    if (currentTime >= 6 && currentTime < 18) {
+      document.body.style.filter = "brightness(80%)";
+    } else {
+      document.body.style.filter = "brightness(50%)";
+    }
+  }
+}
+
+
+This function takes a single argument, isSunny, which should be a boolean indicating whether it is currently sunny or not. It then uses the current time and the value of isSunny to set the brightness of the entire document body using the filter CSS property.
